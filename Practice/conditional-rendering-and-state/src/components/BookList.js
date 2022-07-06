@@ -43,7 +43,7 @@ export const BookList = (props) => {
     // )
 
     // Example 4
-    const bookElements = props.books.map(book => <Book {...book}/>)
+    const bookElements = props.books.map((book, uniqueID) => <Book key={uniqueID} {...book}/>)
 
     return (
         <ul>
