@@ -3,6 +3,7 @@ import { Footer } from "./components/common/Footer";
 
 import './App.css'
 import { Search } from "./components/search/Search";
+import { UserSection } from "./components/user-section/UserSection";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
             <main className='main'>
                 <section className="card users-container">
                     <Search />
+                    <UserSection />
                 </section>
             </main>
 
