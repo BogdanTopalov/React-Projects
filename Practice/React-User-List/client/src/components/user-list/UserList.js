@@ -1,10 +1,31 @@
+import { useState } from "react"
+import * as userService from '../../services/userService'
+import { UserDetails } from "./user-details/UserDetails"
 import { UserItem } from "./user-item/UserItem"
 
 
 export const UserList = (props) => {
+
+    const [selectedUser, setSelectedUser] = useState(null)
+
+    const detailsClickHandler = (userId) => {
+        userService.getOne(userId)
+            .then(user => {
+                setSelectedUser(user)
+            })
+    }
+
+    const detailsCloseHandler = () => {
+        setSelectedUser(null)
+    }
+
     return (
         <div className="table-wrapper">
             {/* <!-- Overlap components  --> */}
+            
+            {//If there is an user, show details
+                selectedUser && <UserDetails user={selectedUser} onClose={detailsCloseHandler}/>
+            }
 
             {/* <!-- <div className="loading-shade"> -->
         <!-- Loading spinner  -->
@@ -130,7 +151,13 @@ export const UserList = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.users.map(user => <UserItem key={user._id} {...user} />)}
+                    {props.users.map(user => 
+                        <UserItem 
+                            key={user._id} 
+                            {...user}
+                             onDetailsClick={detailsClickHandler}
+                        />
+                    )}
                 </tbody>
             </table>
         </div>
