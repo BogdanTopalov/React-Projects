@@ -4,19 +4,28 @@ import { UserDetails } from "./user-details/UserDetails"
 import { UserItem } from "./user-item/UserItem"
 
 
+const UserActions = {
+    Details: 'details',
+    Edit: 'edit',
+    Delete: 'delete',
+}
+
 export const UserList = (props) => {
 
-    const [selectedUser, setSelectedUser] = useState(null)
+    const [userAction, setUserAction] = useState({user: null, action: null})
 
     const detailsClickHandler = (userId) => {
         userService.getOne(userId)
             .then(user => {
-                setSelectedUser(user)
+                setUserAction({
+                    user,
+                    action: UserActions.Details,
+                })
             })
     }
 
     const detailsCloseHandler = () => {
-        setSelectedUser(null)
+        setUserAction({user: null, action: null})
     }
 
     return (
@@ -24,7 +33,12 @@ export const UserList = (props) => {
             {/* <!-- Overlap components  --> */}
             
             {//If there is an user, show details
-                selectedUser && <UserDetails user={selectedUser} onClose={detailsCloseHandler}/>
+                userAction.action === UserActions.Details 
+                && 
+                <UserDetails 
+                    user={userAction.user} 
+                    onClose={detailsCloseHandler}
+                />
             }
 
             {/* <!-- <div className="loading-shade"> -->
