@@ -26,19 +26,11 @@ export const UserList = (props) => {
         setUserAction({ user: null, action: null })
     }
 
-    const userCreateHandler = (e) => {
-        e.preventDefeult()
-
-        const formData = new FormData(e.target)
-        const {firstName, lastName, email, imageUrl, phoneNumber, ...address} = Object.fromEntries(formData)
-
-        const userData = {firstName, lastName, email, imageUrl, phoneNumber, address}
-
+    const userCreateHandler = (userData) => {
         userService.create(userData)
             .then(() => {
                 closeHandler()
             })
-
     }
 
     return (
