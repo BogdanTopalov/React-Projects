@@ -3,7 +3,8 @@ import './App.css';
 import { Counter } from './components/Counter';
 import { BookList } from './components/BookList'
 import { CharacterList } from './components/CharacterList';
-
+import { Routes, Route } from 'react-router-dom'
+import { Navigation } from './components/Navigation';
 
 function App() {
   const books = [
@@ -23,9 +24,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <CharacterList />
-        <Counter />
-        <BookList books={books} />
+        <Navigation />
+        <Routes>
+          <Route path='/' element={<h1>Home Page</h1>} />
+          <Route path='/characters' element={<CharacterList />} />
+          <Route path='/counter' element={<Counter />} />
+          <Route path='/books' element={<BookList books={books} />} />
+        </Routes>
+
       </header>
     </div>
   );
