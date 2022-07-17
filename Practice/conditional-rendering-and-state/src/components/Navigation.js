@@ -9,6 +9,7 @@ export const Navigation = () => {
                 <li><Link to="/characters">Characters</Link></li>
                 <li><Link to="/counter">Counter</Link></li>
                 <li><Link to="/books">Books</Link></li>
+                <li><Link to="/starships">Starships</Link></li>
             </ul>
         </div>
     )
