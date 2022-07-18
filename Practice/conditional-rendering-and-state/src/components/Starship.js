@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
-export const Starships = () => {
+export const Starship = () => {
     const [starship, setStarship] = useState({})
     const { starshipId } = useParams()
     const navigate = useNavigate()
@@ -20,9 +20,7 @@ export const Starships = () => {
 
     return (
         <>
-            <h1>STARSHIPS</h1>
-
-            <h3>Starship {starshipId} Details</h3>
+            <h3>{starship.name} Details</h3>
 
             <ul>
                 <li>Name: {starship.name}</li>
