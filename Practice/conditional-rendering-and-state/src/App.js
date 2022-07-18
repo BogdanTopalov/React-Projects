@@ -5,7 +5,8 @@ import { BookList } from './components/BookList'
 import { CharacterList } from './components/CharacterList';
 import { Routes, Route } from 'react-router-dom'
 import { Navigation } from './components/Navigation';
-import { Starships } from './components/Starships';
+import { Starship } from './components/Starship';
+import { StarshipList } from './components/StarshipList';
 
 function App() {
   const books = [
@@ -31,7 +32,8 @@ function App() {
           <Route path='/characters' element={<CharacterList />} />
           <Route path='/counter' element={<Counter />} />
           <Route path='/books' element={<BookList books={books} />} />
-          <Route path='/starships/:starshipId' element={<Starships />} />
+          <Route path='/starships' element={<StarshipList />} />
+          <Route path='/starships/:starshipId' element={<Starship />} />
         </Routes>
 
       </header>
