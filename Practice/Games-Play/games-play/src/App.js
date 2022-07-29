@@ -43,7 +43,7 @@ function App() {
     }, [])
 
     return (
-        <AuthContext.Provider value={{auth, userLogin}}>
+        <AuthContext.Provider value={{user: auth, userLogin}}>
             <div id="box">
                 <Header />
 
