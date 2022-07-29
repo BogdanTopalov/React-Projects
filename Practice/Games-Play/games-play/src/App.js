@@ -8,6 +8,7 @@ import GameDetails from './components/GameDetails/GameDetails';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import Logout from './components/Logout/Logout';
 import Register from './components/Register/Register';
 
 import { AuthContext } from './context/AuthContext';
@@ -19,6 +20,10 @@ function App() {
 
     const userLogin = (authData) => {
         setAuth(authData)
+    }
+
+    const userLogout = () => {
+        setAuth({})
     }
     
     const addComment = (gameId, comment) => {
@@ -43,7 +48,7 @@ function App() {
     }, [])
 
     return (
-        <AuthContext.Provider value={{user: auth, userLogin}}>
+        <AuthContext.Provider value={{user: auth, userLogin, userLogout}}>
             <div id="box">
                 <Header />
 
@@ -52,6 +57,7 @@ function App() {
                         <Route path="/" element={<Home games={games} />}/>
                         <Route path="/login" element={<Login />}/>
                         <Route path="/register" element={<Register />}/>
+                        <Route path='/logout' element={<Logout />}/>
                         <Route path="/create" element={<CreateGame />}/>
                         <Route path="/catalogue" element={<Catalogue games={games} />}/>
                         <Route path="/catalogue/:gameId" element={<GameDetails games={games} addComment={addComment}/>} />
