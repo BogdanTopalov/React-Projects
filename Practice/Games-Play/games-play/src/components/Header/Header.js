@@ -18,7 +18,7 @@ const Header = () => {
             <nav>
                 <Link to="/catalogue">All games</Link>
 
-                {user
+                {user.accessToken
                     ? <div id="user">
                         <Link to="/create">Create Game</Link>
                         <Link to="/logout">Logout</Link>
