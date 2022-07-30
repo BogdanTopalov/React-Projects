@@ -1,6 +1,11 @@
+import { useContext } from "react"
+import { GameContext } from "../../context/GameContext"
 import CatalogueGame from "./CatalogueGame/CatalogueGame"
 
-const Catalogue = ({ games }) => {
+
+const Catalogue = () => {
+    const { games } = useContext(GameContext)
+
     return (
         <section id="catalog-page">
             <h1>All Games</h1>

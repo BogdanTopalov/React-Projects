@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { GameContext } from '../../context/GameContext'
 
-const GameDetails = ({ games, addComment }) => {
+
+const GameDetails = ({ addComment }) => {
+    const { games } = useContext(GameContext)
     const { gameId } = useParams()
     const [comment, setComment] = useState({
         username: '',
