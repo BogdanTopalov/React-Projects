@@ -4,6 +4,7 @@ import './App.css';
 
 import Catalogue from './components/Catalogue/Catalogue';
 import CreateGame from './components/CreateGame/CreateGame';
+import EditGame from './components/Edit/EditGame';
 import GameDetails from './components/GameDetails/GameDetails';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -38,6 +39,10 @@ function App() {
         navigate('/catalogue')
     }
 
+    const editGame = (gameId, gameData) => {
+        setGames(state => state.map(x => x._id === gameId ? gameData : x))
+    }
+
     const addComment = (gameId, comment) => {
         setGames(state => {
             const game = state.find(x => x._id == gameId)
@@ -64,7 +69,7 @@ function App() {
             <div id="box">
                 <Header />
 
-                <GameContext.Provider value={{games, addGame,}}>
+                <GameContext.Provider value={{games, addGame, editGame}}>
                     <main id="main-content">
                         <Routes>
                             <Route path="/" element={<Home games={games} />} />
@@ -72,6 +77,7 @@ function App() {
                             <Route path="/register" element={<Register />} />
                             <Route path='/logout' element={<Logout />} />
                             <Route path="/create" element={<CreateGame />} />
+                            <Route path="/games/:gameId/edit" element={<EditGame />} />
                             <Route path="/catalogue" element={<Catalogue />} />
                             <Route path="/catalogue/:gameId" element={<GameDetails addComment={addComment} />} />
                         </Routes>
