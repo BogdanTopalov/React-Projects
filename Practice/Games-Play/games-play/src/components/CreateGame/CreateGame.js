@@ -1,8 +1,20 @@
+import { useContext } from "react"
+import { GameContext } from "../../context/GameContext"
+import { create } from "../../services/gameService"
+
+
 const CreateGame = () => {
+    const { addGame } = useContext(GameContext)
+
     const onSubmit = (e) => {
         e.preventDefault()
 
         const gameData = Object.fromEntries(new FormData(e.target))
+
+        create(gameData)
+            .then(result => {
+                addGame(result)
+            })
     }
     
     return (
