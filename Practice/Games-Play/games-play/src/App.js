@@ -12,11 +12,12 @@ import Logout from './components/Logout/Logout';
 import Register from './components/Register/Register';
 
 import { AuthContext } from './context/AuthContext';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import * as gameService from './services/gameService'
 
 function App() {
     const [games, setGames] = useState([])
-    const [auth, setAuth] = useState({})
+    const [auth, setAuth] = useLocalStorage('auth', {})
 
     const userLogin = (authData) => {
         setAuth(authData)
