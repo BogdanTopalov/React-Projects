@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Catalogue from './components/Catalogue/Catalogue';
+import PrivateRoute from './components/common/PrivateRoute';
 import CreateGame from './components/CreateGame/CreateGame';
 import EditGame from './components/EditGame/EditGame';
 import GameDetails from './components/GameDetails/GameDetails';
@@ -28,7 +29,7 @@ function App() {
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path='/logout' element={<Logout />} />
-                            <Route path="/create" element={<CreateGame />} />
+                            <Route path="/create" element={<PrivateRoute> <CreateGame /> </PrivateRoute>} />
                             <Route path="/games/:gameId/edit" element={<EditGame />} />
                             <Route path="/catalogue" element={<Catalogue />} />
                             <Route path="/catalogue/:gameId" element={<GameDetails />} />
