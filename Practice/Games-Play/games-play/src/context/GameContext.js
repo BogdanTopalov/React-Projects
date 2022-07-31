@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAll } from "../services/gameService";
 
@@ -18,6 +18,9 @@ export const GameProvider = ({
             
             case "EDIT_GAME":
                 return state.map(x => x._id === action.gameId ? action.payload : x)
+            
+            case "REMOVE_GAME":
+                return state.filter(x => x._id !== action.gameId)
             
             case "ADD_COMMENT":
                 return state.map(x => x._id === action.gameId ? {...x, comments: [...x.comments, action.payload]} : x)
@@ -64,6 +67,13 @@ export const GameProvider = ({
         })
     }
 
+    const removeGame = (gameId) => {
+        dispatch({
+            type: 'REMOVE_GAME',
+            gameId
+        })
+    }
+
     const addComment = (gameId, comment) => {
         dispatch({
             type: 'ADD_COMMENT',
@@ -84,7 +94,7 @@ export const GameProvider = ({
     }
 
     return (
-        <GameContext.Provider value={{games, addGame, editGame, addComment}}>
+        <GameContext.Provider value={{games, addGame, editGame, removeGame, addComment}}>
             {children}
         </GameContext.Provider>
     )

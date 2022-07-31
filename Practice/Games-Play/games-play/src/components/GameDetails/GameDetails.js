@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { GameContext } from '../../context/GameContext'
 import { createComment } from '../../services/commentService'
-import { getOne } from '../../services/gameService'
+import { getOne, remove } from '../../services/gameService'
 
 
 const GameDetails = () => {
-    const { addComment } = useContext(GameContext)
+    const { addComment, removeGame } = useContext(GameContext)
     const { gameId } = useParams()
     const [currentGame, setCurrentGame] = useState({})
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -16,7 +17,7 @@ const GameDetails = () => {
             .then(result => {
                 setCurrentGame(result)
             })
-    }, [])
+    }, [gameId])
 
     const addCommentHandler = (e) => {
         e.preventDefault()
@@ -31,6 +32,18 @@ const GameDetails = () => {
             })
     }
 
+    const gameDeleteHandler = () => {
+        const confirmation = window.confirm('Are you sure you want to delete this game?')
+
+        if (confirmation) {
+            remove(gameId)
+                .then(() => {
+                    removeGame(gameId)
+                    navigate('/catalogue')
+                })
+        }
+    }
+
 
     return (
         <section id="game-details">
@@ -38,7 +51,7 @@ const GameDetails = () => {
 
             <div className="info-section">
                 <div className="game-header">
-                    <img className="game-img" src={currentGame.imageUrl} />
+                    <img className="game-img" src={currentGame.imageUrl} alt="img"/>
                     <h1>{currentGame.title}</h1>
                     <span className="levels">MaxLevel: {currentGame.mas_level}</span>
                     <p className="type">{currentGame.category}</p>
@@ -66,9 +79,9 @@ const GameDetails = () => {
                     <Link to={`/games/${gameId}/edit`} className="button">
                         Edit
                     </Link>
-                    <Link to={'/'} className="button">
+                    <button onClick={gameDeleteHandler} className="button">
                         Delete
-                    </Link>
+                    </button>
                 </div>
             </div>
             

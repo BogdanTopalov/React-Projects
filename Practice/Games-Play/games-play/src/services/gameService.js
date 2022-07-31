@@ -1,4 +1,4 @@
-import { get, post, put } from "./requester"
+import { del, get, post, put } from "./requester"
 
 const baseUrl = 'http://localhost:3030/data/games'
 
@@ -17,4 +17,8 @@ export const create = (gameData) => {
 
 export const edit = (gameId, gameData) => {
     return put(`${baseUrl}/${gameId}`, gameData)
+}
+
+export const remove = (gameId) => {
+    return del(`${baseUrl}/${gameId}`)
 }
