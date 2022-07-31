@@ -10,11 +10,18 @@ export const GameProvider = ({
     const gameReducer = (state, action) => {
         switch (action.type) {
             case "ADD_GAMES":
-                return [...action.payload]
+                // return [...action.payload]
+                return action.payload.map(x => ({...x, comments: []}))
+            
             case "ADD_GAME":
                 return [...state, action.payload]
+            
             case "EDIT_GAME":
                 return state.map(x => x._id === action.gameId ? action.payload : x)
+            
+            case "ADD_COMMENT":
+                return state.map(x => x._id === action.gameId ? {...x, comments: [...x.comments, action.payload]} : x)
+            
             default:
                 return state
         }
@@ -58,6 +65,11 @@ export const GameProvider = ({
     }
 
     const addComment = (gameId, comment) => {
+        dispatch({
+            type: 'ADD_COMMENT',
+            payload: comment,
+            gameId
+        })
         // setGames(state => {
         //     const game = state.find(x => x._id === gameId)
 

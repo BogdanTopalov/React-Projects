@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { GameContext } from '../../context/GameContext'
+import { createComment } from '../../services/commentService'
 import { getOne } from '../../services/gameService'
 
 
@@ -9,32 +10,27 @@ const GameDetails = () => {
     const { gameId } = useParams()
     const [currentGame, setCurrentGame] = useState({})
 
-    const [comment, setComment] = useState({
-        username: '',
-        comment: '',
-    })
 
     useEffect(() => {
         getOne(gameId)
             .then(result => {
                 setCurrentGame(result)
             })
-    })
+    }, [])
 
     const addCommentHandler = (e) => {
         e.preventDefault()
 
-        const commentResult = `${comment.username}: ${comment.comment}`
+        const formData = new FormData(e.target)
 
-        addComment(gameId, commentResult)
+        const comment = formData.get('comment')
+
+        createComment(gameId, comment)
+            .then(result => {
+                addComment(gameId, result)
+            })
     }
 
-    const onChange = (e) => {
-        setComment(state => ({
-            ...state,
-            [e.target.name]: e.target.value
-        }))
-    }
 
     return (
         <section id="game-details">
@@ -79,18 +75,9 @@ const GameDetails = () => {
             <article className="create-comment">
                 <label>Add new comment:</label>
                 <form className="form" onSubmit={addCommentHandler}>
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder="John Doe"
-                        onChange={onChange}
-                        value={comment.username}
-                    />
                     <textarea
                         name="comment"
                         placeholder="Comment......"
-                        onChange={onChange}
-                        value={comment.comment}
                     />
                     <input
                         className="btn submit"
