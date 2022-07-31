@@ -4,9 +4,11 @@ import { GameContext } from '../../context/GameContext'
 import { getOne } from '../../services/gameService'
 
 
-const GameDetails = ({ addComment }) => {
+const GameDetails = () => {
+    const { addComment } = useContext(GameContext)
     const { gameId } = useParams()
     const [currentGame, setCurrentGame] = useState({})
+
     const [comment, setComment] = useState({
         username: '',
         comment: '',
