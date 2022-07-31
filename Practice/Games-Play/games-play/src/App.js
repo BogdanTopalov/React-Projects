@@ -4,7 +4,7 @@ import './App.css';
 
 import Catalogue from './components/Catalogue/Catalogue';
 import CreateGame from './components/CreateGame/CreateGame';
-import EditGame from './components/Edit/EditGame';
+import EditGame from './components/EditGame/EditGame';
 import GameDetails from './components/GameDetails/GameDetails';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -12,23 +12,16 @@ import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import Register from './components/Register/Register';
 
-import { AuthContext } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
 import { GameContext } from './context/GameContext';
-import { useLocalStorage } from './hooks/useLocalStorage';
 import * as gameService from './services/gameService'
 
 function App() {
     const [games, setGames] = useState([])
-    const [auth, setAuth] = useLocalStorage('auth', {})
+    
     const navigate = useNavigate()
 
-    const userLogin = (authData) => {
-        setAuth(authData)
-    }
 
-    const userLogout = () => {
-        setAuth({})
-    }
 
     const addGame = (gameData) => {
         setGames(state => [
@@ -45,7 +38,7 @@ function App() {
 
     const addComment = (gameId, comment) => {
         setGames(state => {
-            const game = state.find(x => x._id == gameId)
+            const game = state.find(x => x._id === gameId)
 
             const comments = game.comments || []
             comments.push(comment)
@@ -65,7 +58,7 @@ function App() {
     }, [])
 
     return (
-        <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
+        <AuthProvider>
             <div id="box">
                 <Header />
 
@@ -85,7 +78,7 @@ function App() {
                 </GameContext.Provider>
 
             </div>
-        </AuthContext.Provider>
+        </AuthProvider>
     );
 }
 
