@@ -15,7 +15,7 @@ const EditGame = () => {
             .then(gameData => {
                 setCurrentGame(gameData)
             })
-    }, [])
+    }, [gameId])
 
     const onSubmit = (e) => {
         e.preventDefault()
