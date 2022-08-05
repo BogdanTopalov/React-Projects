@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext'
 import { GameContext } from '../../context/GameContext'
 import { createComment } from '../../services/commentService'
 import { getOne, remove } from '../../services/gameService'
@@ -9,8 +10,11 @@ const GameDetails = () => {
     const { addComment, removeGame } = useContext(GameContext)
     const { gameId } = useParams()
     const [currentGame, setCurrentGame] = useState({})
-    const navigate = useNavigate()
+    const { user } = useContext(AuthContext)
 
+    const isOwner = currentGame._ownerId === user._id
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         getOne(gameId)
@@ -51,7 +55,7 @@ const GameDetails = () => {
 
             <div className="info-section">
                 <div className="game-header">
-                    <img className="game-img" src={currentGame.imageUrl} alt="img"/>
+                    <img className="game-img" src={currentGame.imageUrl} alt="img" />
                     <h1>{currentGame.title}</h1>
                     <span className="levels">MaxLevel: {currentGame.mas_level}</span>
                     <p className="type">{currentGame.category}</p>
@@ -74,17 +78,18 @@ const GameDetails = () => {
                         <p className="no-comment">No comments.</p>
                     } */}
                 </div>
-                
-                <div className="buttons">
-                    <Link to={`/games/${gameId}/edit`} className="button">
-                        Edit
-                    </Link>
-                    <button onClick={gameDeleteHandler} className="button">
-                        Delete
-                    </button>
-                </div>
+                {isOwner &&
+                    <div className="buttons">
+                        <Link to={`/games/${gameId}/edit`} className="button">
+                            Edit
+                        </Link>
+                        <button onClick={gameDeleteHandler} className="button">
+                            Delete
+                        </button>
+                    </div>
+                }
             </div>
-            
+
             <article className="create-comment">
                 <label>Add new comment:</label>
                 <form className="form" onSubmit={addCommentHandler}>
