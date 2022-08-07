@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom"
+
 const SideNavigation = () => {
     return (
         <section className="sidebar">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Food</a></li>
-                <li><a href="">Drinks</a></li>
-                <li><a href="">Reservation</a></li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/about'>About</Link></li>
+                <li><Link to='/food'>Food</Link></li>
+                <li><Link to='/drinks'>Drinks</Link></li>
+                <li><Link to='/reservation'>Reservation</Link></li>
             </ul>
         </section>
     )
