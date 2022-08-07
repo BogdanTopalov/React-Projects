@@ -1,55 +1,24 @@
+import { useEffect, useState } from "react"
+import { getAllFood } from "../../services/foodService"
+import FoodItem from "./FoodItem"
+
+
 const Food = () => {
+    const [food, setFood] = useState([])
+
+    useEffect(() => {
+        getAllFood()
+            .then(result => {
+                setFood(Object.values(result))
+            })
+    }, [])
+
     return (
         <div className="catalogue">
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-            <a className="item" href="">
-                <div className="item-details">
-                    <h3>Coffee</h3>
-                    <p>3$</p>
-                </div>
-            </a>
-
+            {food.length > 0
+                ? food.map(f => <FoodItem key={f._id} item={f} />)
+                : <h2>No food :/ </h2>
+            }
         </div>
     )
 }
