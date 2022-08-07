@@ -171,9 +171,79 @@ main h1 {
     border: solid 1px purple;
     max-height: 20rem;
     max-width: 20rem;
+    background-position: center;
+    background-size: cover;
 }
 
 .item-details {
     border: solid 1px gold;
     text-align: center;
 } 
+
+
+.login-register {
+    width: 25rem;
+    height: 30rem;
+    border: 1px solid green;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+
+    color: white;
+}
+
+.login-register h2 {
+    font-size: 60px;
+    padding-bottom: 1rem;
+}
+
+.login-register .line {
+    width: 50%;
+    border-bottom: solid 1px white;
+    margin: 0 auto;
+}
+
+.login-register input {
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px white;
+
+    text-align: center;
+    font-size: large;
+
+    color: white;
+}
+
+.login-register button,
+.login-register input {
+    width: 70%;
+    height: 3rem;
+}
+
+
+.login-register button {
+    background-color: navy;
+    color: white;
+    font-size: large;
+}
+
+
+
+::placeholder {
+    text-align: center;
+}
+
+.login-register input:focus {
+    outline: none;
+}
+
+.login-register input:focus::placeholder {
+    color: transparent;
+
+}
