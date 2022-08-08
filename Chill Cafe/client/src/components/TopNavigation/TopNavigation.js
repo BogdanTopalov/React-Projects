@@ -16,7 +16,7 @@ const TopNavigation = () => {
 
             {user.accessToken
                 ? <ul>
-                    <li><Link to='/'><FontAwesomeIcon icon={faUser} /></Link></li>
+                    <li><Link to='/profile'><FontAwesomeIcon icon={faUser} /></Link></li>
                     <li><Link to='/logout'><FontAwesomeIcon icon={faRightFromBracket} /></Link></li>
                 </ul>
                 : <ul>
