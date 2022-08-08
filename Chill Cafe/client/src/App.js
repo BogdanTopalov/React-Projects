@@ -7,31 +7,38 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
+import Profile from './components/Profile/Profile';
 import Register from './components/Register/Register';
+import Reservation from './components/Reservation/Reservation';
 import SideNavigation from './components/SideNavigation/SideNavigation';
 import TopNavigation from './components/TopNavigation/TopNavigation';
 import { AuthProvider } from './context/AuthContext';
+import { MainProvider } from './context/MainContext';
 
 
 function App() {
 	return (
 		<AuthProvider>
-			<TopNavigation />
-			<SideNavigation />
-			<Filters />
+			<MainProvider>
+				<TopNavigation />
+				<SideNavigation />
+				<Filters />
 
-			<main>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/food' element={<Food />} />
-					<Route path='/drinks' element={<Drinks />} />
-					<Route path='/login' element={<Login />} />
-					<Route path='/register' element={<Register />} />
-					<Route path='/logout' element={<Logout />} />
-				</Routes>
-			</main>
+				<main>
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/food' element={<Food />} />
+						<Route path='/drinks' element={<Drinks />} />
+						<Route path='/login' element={<Login />} />
+						<Route path='/register' element={<Register />} />
+						<Route path='/logout' element={<Logout />} />
+						<Route path='/profile' element={<Profile />} />
+						<Route path='/reservation' element={<Reservation />} />
+					</Routes>
+				</main>
 
-			<Footer />
+				<Footer />
+			</MainProvider>
 		</AuthProvider>
 	);
 }
