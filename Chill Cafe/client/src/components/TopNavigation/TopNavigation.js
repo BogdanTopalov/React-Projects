@@ -1,18 +1,29 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUmbrellaBeach, faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 
 
 const TopNavigation = () => {
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const onClickHandler = () => {
+        navigate('/add')
+    }
 
     return (
         <section className="topbar">
             <Link className="logo" to='/'>
                 <FontAwesomeIcon icon={faUmbrellaBeach} />
             </Link>
+            {user.email === 'admin@abv.bg'
+                ? <div className='buttons'>
+                    <button onClick={onClickHandler}>Add Item</button>
+                </div>
+                : <></>
+            }
 
             {user.accessToken
                 ? <ul>
