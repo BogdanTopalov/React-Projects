@@ -176,8 +176,8 @@ main h1 {
 .item {
     border: solid 1px purple;
     border-radius: 15px;
-    max-height: 20rem;
-    max-width: 20rem;
+    height: 20rem;
+    width: 15rem;
     background-position: center;
     background-size: cover;
     
@@ -195,10 +195,12 @@ main h1 {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     text-align: center;
-} 
+}
 
 
-.login-register {
+.login-register,
+.edit,
+.add {
     width: 25rem;
     height: 30rem;
     border: 1px solid green;
@@ -211,11 +213,14 @@ main h1 {
     gap: 2rem;
 
     color: white;
+    backdrop-filter: blur(10px);
 }
 
-.login-register h2 {
+.login-register h2,
+.edit h2,
+.add h2 {
     font-size: 60px;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .login-register .line {
@@ -224,6 +229,8 @@ main h1 {
     margin: 0 auto;
 }
 
+.edit input,
+.add input,
 .login-register input {
     background-color: transparent;
     border-top: none;
@@ -237,30 +244,153 @@ main h1 {
     color: white;
 }
 
+.edit button,
+.edit input,
+.add button,
+.add input,
 .login-register button,
 .login-register input {
     width: 70%;
     height: 3rem;
 }
 
-
-.login-register button {
-    background-color: navy;
+.login-register button,
+.edit .buttons button,
+.add .buttons button {
+    background-color: #1C3879;
     color: white;
     font-size: large;
+    border: none;
 }
 
+.login-register p a {
+    color: #3FA796;
+}
 
 
 ::placeholder {
     text-align: center;
+    color: white;
 }
 
+.edit input:focus,
+.add input:focus,
 .login-register input:focus {
     outline: none;
 }
 
-.login-register input:focus::placeholder {
+.login-register input:focus::placeholder,
+.add input:focus::placeholder {
     color: transparent;
+}
 
+.details {
+    width: 70%;
+    height: 85%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    border: 1px solid blanchedalmond;
+    backdrop-filter: blur(10px);
+}
+
+.login-register,
+.login-register button,
+.edit,
+.add,
+.details,
+.details img { border-radius: 15px;}
+
+.details img {
+    height: 35rem;
+    width: 30rem;
+    object-fit: cover;
+}
+
+.details .info {
+    border: 1px solid gold;
+    height: inherit;
+    width: 25rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    text-align: center;
+    color: white;
+
+}
+
+.details .info h1 {
+    letter-spacing: 0;
+    font-size: 45px;
+}
+
+.details .info h3,
+.details .info h2 {
+    padding-top: 1rem;
+}
+.details .info .buttons button:first-of-type {
+    background-color: #1C3879;
+}
+
+.details .info .buttons button:last-of-type {
+    background-color: #A10035;
+}
+
+.topbar .buttons button {
+    background-color: #3FA796;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    gap: 1rem;
+}
+
+.buttons button {
+    width: 5.5rem;
+    height: 2rem;
+    color: white;
+    font-size: medium;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: #3B9AE1;
+    cursor: pointer;
+}
+
+.edit,
+.add {
+    width: 70%;
+    height: 85%;
+}
+
+.details .info .buttons,
+.edit .buttons {
+    flex-direction: row;
+
+}
+
+.edit .buttons button:last-of-type {
+    background-color: #A10035;
+}
+
+.add .buttons button:last-of-type {
+    background-color: #3FA796;
+}
+
+.add label,
+.add select  {
+    font-size: 22px;
+}
+
+.add select {
+    border-radius: 15px;
+    width: 7rem;
+    text-align: center;
 }
