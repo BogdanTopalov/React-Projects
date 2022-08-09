@@ -21,19 +21,19 @@ const Filters = () => {
     if (location.pathname === '/food') {
         return (
             <section className="filters">
-                <ul>
+                <div className="buttons">
                     <button onClick={onFoodClickHandler} value='Fast Food'>Fast Food</button>
-                    <button onClick={onFoodClickHandler} value='Dessert'>Dessert</button>
-                </ul>
+                    <button onClick={onFoodClickHandler} value='Dessert'>Desserts</button>
+                </div>
             </section>
         )
     } else if (location.pathname === '/drinks') {
             return (
                 <section className="filters">
-                    <ul>
+                    <div className="buttons">
                         <button onClick={onDrinkClickHandler} value='Coffee'>Coffee</button>
                         <button onClick={onDrinkClickHandler} value='Cocktail'>Cocktails</button>
-                    </ul>
+                    </div>
                 </section>
             )
         }
