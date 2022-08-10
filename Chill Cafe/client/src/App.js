@@ -5,6 +5,7 @@ import Drinks from './components/Drinks/Drinks';
 import DrinksItemDetails from './components/Drinks/DrinksItemDetails';
 import EditDrink from './components/Drinks/EditDrink';
 import Filters from './components/Filters/Filters';
+import EditFood from './components/Food/EditFood';
 import Food from './components/Food/Food';
 import FoodItemDetails from './components/Food/FoodItemDetails';
 import Footer from './components/Footer/Footer';
@@ -35,6 +36,7 @@ function App() {
 						<Route element={<PrivateRoute />} >
 							<Route path='/add' element={<AddItem />} />
 							<Route path='/drinks/:drinkId/edit' element={<EditDrink />} />
+							<Route path='/food/:foodId/edit' element={<EditFood />} />
 						</Route>
 						<Route path='/food' element={<Food />} />
 						<Route path='/food/:foodId' element={<FoodItemDetails />} />
