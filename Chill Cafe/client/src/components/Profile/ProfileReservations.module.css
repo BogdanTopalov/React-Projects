@@ -1,0 +1,41 @@
+.info {
+    text-align: center;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 1rem;
+    border-radius: 15px;
+
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.info svg {
+    color: white;
+    font-size: 26px;
+}
+
+.info h4 {
+    color: white;
+    font-size: large;
+    text-shadow: -1px 1px 2px #000,
+        1px 1px 2px #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+
+.info button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.info button svg {
+    color: #EB1D36;
+}

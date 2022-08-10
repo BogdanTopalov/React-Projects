@@ -1,15 +1,32 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
+import { getAllReservations } from "../../services/reservationService"
+import styles from './Profile.module.css'
+import ProfileReservations from "./ProfileReservations"
 
 
 const Profile = () => {
     const { user } = useContext(AuthContext)
+    const userId = user._id
+    const [myReservations, setMyReservations] = useState([])
 
+    useEffect(() => {
+        getAllReservations(userId)
+            .then(result => {
+                const resultList = Object.values(result).filter(r => r.userId === userId)
+                setMyReservations(resultList)
+            })
+    }, [userId])
 
-    return(
-        <div className="profile">
-            <img src="https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2lsaG91ZXR0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="img"/>
+    return (
+        <div className={styles.profile}>
             <h2>{user.email}</h2>
+            <h3>My Reservations</h3>
+            <div className={styles.line}></div>
+            {myReservations.length > 0
+                ? myReservations.map(r => <ProfileReservations key={r._id} info={r} />)
+                : <h4>No reservations :/</h4>
+            }
         </div>
     )
 }
