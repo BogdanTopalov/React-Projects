@@ -8,6 +8,7 @@ import { AuthContext } from '../../context/AuthContext'
 const TopNavigation = () => {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
+    const profilePath = `/profile/${user._id}`
 
     const onClickHandler = () => {
         navigate('/add')
@@ -27,7 +28,7 @@ const TopNavigation = () => {
 
             {user.accessToken
                 ? <ul>
-                    <li><Link to='/profile'><FontAwesomeIcon icon={faUser} /></Link></li>
+                    <li><Link to={profilePath}><FontAwesomeIcon icon={faUser} /></Link></li>
                     <li><Link to='/logout'><FontAwesomeIcon icon={faRightFromBracket} /></Link></li>
                 </ul>
                 : <ul>

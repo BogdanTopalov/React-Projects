@@ -8,10 +8,6 @@ const DrinksItem = ({ item }) => {
             style={{ backgroundImage: `url("${item.imageUrl}")` }}
             to={`/drinks/${item._id}`}
         >
-            <div className="item-details">
-                <h3>{item.name}</h3>
-                <p>{item.price}$</p>
-            </div>
         </Link>
     )
 }
