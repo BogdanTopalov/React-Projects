@@ -5,7 +5,6 @@ import { editDrink, getOneDrink } from "../../services/drinksService"
 
 
 const EditDrink = () => {
-    const [currentDrink, setCurrentDrink] = useState({})
     const [formValues, setFormValues] = useState({})
     const { drinkId } = useParams()
     const navigate = useNavigate()
@@ -13,7 +12,6 @@ const EditDrink = () => {
     useEffect(() => {
         getOneDrink(drinkId)
             .then(result => {
-                setCurrentDrink(result)
                 setFormValues(result)
             })
     }, [drinkId])
@@ -34,7 +32,7 @@ const EditDrink = () => {
             )
     }
 
-    const onCencelHandler = () => {
+    const onCancelHandler = () => {
         navigate(`/drinks/${drinkId}`)
     }
 
@@ -60,9 +58,21 @@ const EditDrink = () => {
                 value={formValues.type}
                 onChange={onChangeHandler}
             />
+            <input 
+                type="text"
+                name="imageUrl"
+                value={formValues.imageUrl}
+                onChange={onChangeHandler}
+            />
+            <input 
+                type="text"
+                name="info"
+                value={formValues.info}
+                onChange={onChangeHandler}
+            />
             <div className="buttons">
                 <button>Submit</button>
-                <button onClick={onCencelHandler}>Cencel</button>
+                <button onClick={onCancelHandler}>Cancel</button>
             </div>
         </form>
     )

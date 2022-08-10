@@ -38,6 +38,7 @@ const DrinksItemDetails = () => {
                     <h1>{currentDrink.name}</h1>
                     <h2>Price: &euro;{currentDrink.price}</h2>
                     <h3>Type: {currentDrink.type}</h3>
+                    <p>{currentDrink.info}</p>
                 </div>
 
                 {user.email === 'admin@abv.bg'
