@@ -1,0 +1,15 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about p {
+    font-size: 26px;
+    text-align: center;
+    color: white;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}

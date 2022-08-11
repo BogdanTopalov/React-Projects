@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './components/About/About';
 import AddItem from './components/AddItem/AddItem';
 import Drinks from './components/Drinks/Drinks';
 import DrinksItemDetails from './components/Drinks/DrinksItemDetails';
@@ -33,6 +34,7 @@ function App() {
 				<main>
 					<Routes>
 						<Route path='/' element={<Home />} />
+						<Route path='/about' element={<About />} />
 						<Route element={<PrivateRoute />} >
 							<Route path='/add' element={<AddItem />} />
 							<Route path='/drinks/:drinkId/edit' element={<EditDrink />} />
