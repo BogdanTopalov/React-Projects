@@ -8,14 +8,17 @@ import styles from './AddItem.module.css'
 const AddItem = () => {
     document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1468581264429-2548ef9eb732?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")'
 
-    const [formValues, setFormValues] = useState({})
+    const [formValues, setFormValues] = useState({
+        name: '',
+        price: '',
+        type: '',
+        imageUrl: '',
+        category: '',
+    })
     const navigate = useNavigate()
 
     const onChangeHandler = (e) => {
-        let { name, value } = e.target
-        if (name === '') {
-            name = 'category'
-        }
+        const { name, value } = e.target
         setFormValues(
             { ...formValues, [name]: value }
         )
@@ -72,7 +75,11 @@ const AddItem = () => {
                 Select category:
             </label>
             
-            <select onChange={onChangeHandler}>
+            <select 
+                name="category" 
+                onChange={onChangeHandler}
+            >
+                <option>---</option>
                 <option value="/food">Food</option>
                 <option value="/drinks">Drinks</option>
             </select>

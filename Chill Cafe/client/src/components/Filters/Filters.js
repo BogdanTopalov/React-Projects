@@ -26,6 +26,7 @@ const Filters = () => {
                 <div className={styles.buttons}>
                     <button onClick={onFoodClickHandler} value='Fast Food'>Fast Food</button>
                     <button onClick={onFoodClickHandler} value='Dessert'>Desserts</button>
+                    <button onClick={onFoodClickHandler} value='Main'>Main</button>
                 </div>
             </section>
         )

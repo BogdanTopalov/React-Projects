@@ -31,7 +31,6 @@ const Drinks = () => {
                 : !selectedDrink
                     ? <h2>Select a drink type from here <FontAwesomeIcon icon={faHandPointRight}/></h2>
                     : <h2>No {selectedDrink}s at the moment, select another <FontAwesomeIcon icon={faHandPointRight}/></h2>
-                    
             }
         </div>
     )
