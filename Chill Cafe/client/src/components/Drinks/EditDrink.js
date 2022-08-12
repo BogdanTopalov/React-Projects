@@ -1,7 +1,7 @@
-import { text } from "@fortawesome/fontawesome-svg-core"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { editDrink, getOneDrink } from "../../services/drinksService"
+import styles from './EditDrink.module.css'
 
 
 const EditDrink = () => {
@@ -37,7 +37,7 @@ const EditDrink = () => {
     }
 
     return (
-        <form className="edit" onSubmit={onSubmitHandler}>
+        <form className={styles.edit} onSubmit={onSubmitHandler}>
             <h2>Edit Drink</h2>
             <input 
                 type="text"
@@ -70,7 +70,7 @@ const EditDrink = () => {
                 value={formValues.info}
                 onChange={onChangeHandler}
             />
-            <div className="buttons">
+            <div className={styles.buttons}>
                 <button>Submit</button>
                 <button onClick={onCancelHandler}>Cancel</button>
             </div>

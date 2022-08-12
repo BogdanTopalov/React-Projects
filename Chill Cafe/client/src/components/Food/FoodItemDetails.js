@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import { getOneFood, removeFood } from "../../services/foodService"
+import styles from './FoodItemDetails.module.css'
 
 
 const FoodItemDetails = () => {
@@ -31,9 +32,9 @@ const FoodItemDetails = () => {
     }
 
     return (
-        <div className="details">
+        <div className={styles.details}>
             <img src={currentFood.imageUrl} alt='img' />
-            <div className="info">
+            <div className={styles.info}>
                 <div>
                     <h1>{currentFood.name}</h1>
                     <h2>Price: &euro;{currentFood.price}</h2>
@@ -42,7 +43,7 @@ const FoodItemDetails = () => {
                 </div>
 
                 {user.email === 'admin@abv.bg'
-                    ? <div className="buttons">
+                    ? <div className={styles.buttons}>
                         <button onClick={onEditHandler}>Edit</button>
                         <button onClick={onDeleteHandler}>Delete</button>
                     </div>

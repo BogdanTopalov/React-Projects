@@ -6,6 +6,7 @@ import { faHandPointRight } from '@fortawesome/free-regular-svg-icons'
 import { MainContext } from "../../context/MainContext"
 import { getAllDrinks } from "../../services/drinksService"
 import DrinksItem from "./DrinksItem"
+import styles from './Drinks.module.css'
 
 
 const Drinks = () => {
@@ -24,7 +25,7 @@ const Drinks = () => {
     }, [selectedDrink])
 
     return (
-        <div className="catalogue">
+        <div className={styles.catalogue}>
             {drinks.length > 0
                 ? drinks.map(d => <DrinksItem key={d._id} item={d} />)
                 : !selectedDrink

@@ -1,16 +1,20 @@
 import styles from './ProfileReservations.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faCircleXmark } from '@fortawesome/free-regular-svg-icons'
+import { faStar } from '@fortawesome/free-regular-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { removeReservation } from '../../services/reservationService'
 
 
 const ProfileReservations = ({ info }) => {
 
     const onDeleteHandler = () => {
-        removeReservation(info._id)
+        const confirm = window.confirm('Do you want to cancel your reservation?')
+        if (confirm) {
+            removeReservation(info._id)
             .then(
                 window.location.reload(false)
             )
+        }
     }
 
     return (
@@ -21,7 +25,7 @@ const ProfileReservations = ({ info }) => {
                 <h4>Time: {info.time}</h4>
             </div>
             <FontAwesomeIcon icon={faStar} />
-            <button onClick={onDeleteHandler}><FontAwesomeIcon icon={faCircleXmark} /></button>
+            <button onClick={onDeleteHandler}><FontAwesomeIcon icon={faXmark} /></button>
         </div>
     )
 }

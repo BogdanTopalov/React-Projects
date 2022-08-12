@@ -3,6 +3,7 @@ import { faUmbrellaBeach, faUser, faRightFromBracket } from '@fortawesome/free-s
 import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
+import styles from './TopNavigation.module.css'
 
 
 const TopNavigation = () => {
@@ -15,12 +16,12 @@ const TopNavigation = () => {
     }
 
     return (
-        <section className="topbar">
-            <Link className="logo" to='/'>
+        <section className={styles.topbar}>
+            <Link className={styles.logo} to='/'>
                 <FontAwesomeIcon icon={faUmbrellaBeach} />
             </Link>
             {user.email === 'admin@abv.bg'
-                ? <div className='buttons'>
+                ? <div className={styles.buttons}>
                     <button onClick={onClickHandler}>Add Item</button>
                 </div>
                 : <></>

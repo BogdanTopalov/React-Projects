@@ -1,0 +1,69 @@
+.edit {
+    width: 70%;
+    height: 85%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.edit h2 {
+    font-size: 60px;
+    padding-bottom: 0.5rem;
+}
+
+.edit input {
+    width: 70%;
+    height: 3rem;
+
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px white;
+
+    text-align: center;
+    font-size: large;
+
+    color: white;
+}
+
+.edit input:focus {
+    outline: none;
+}
+
+.edit h2,
+.edit input {
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.buttons button {
+    width: 5.5rem;
+    height: 2rem;
+    color: white;
+    font-size: medium;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+    background-color: #1C3879;
+}
+
+.buttons button:last-of-type {
+    background-color: #A10035;
+}

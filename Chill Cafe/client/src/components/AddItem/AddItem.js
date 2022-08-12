@@ -2,9 +2,12 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { addDrink } from "../../services/drinksService"
 import { addFood } from "../../services/foodService"
+import styles from './AddItem.module.css'
 
 
 const AddItem = () => {
+    document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1468581264429-2548ef9eb732?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")'
+
     const [formValues, setFormValues] = useState({})
     const navigate = useNavigate()
 
@@ -35,7 +38,7 @@ const AddItem = () => {
     }
 
     return (
-        <form className="add" onSubmit={onSubmitHandler}>
+        <form className={styles.add} onSubmit={onSubmitHandler}>
             <h2>Add Item</h2>
             <input
                 type="text"
@@ -74,7 +77,7 @@ const AddItem = () => {
                 <option value="/drinks">Drinks</option>
             </select>
             
-            <div className="buttons">
+            <div className={styles.buttons}>
                 <button>Submit</button>
             </div>
         </form>

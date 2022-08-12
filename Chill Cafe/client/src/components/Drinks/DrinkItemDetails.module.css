@@ -1,0 +1,77 @@
+.details {
+    width: 70%;
+    height: 85%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    backdrop-filter: blur(10px);
+}
+
+.details,
+.details img {
+    border-radius: 15px;
+}
+
+.details img {
+    height: 35rem;
+    width: 30rem;
+    object-fit: cover;
+}
+
+.info {
+    height: inherit;
+    width: 25rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    text-align: center;
+    color: white;
+    text-shadow: -1px 1px 2px #000,
+        1px 1px 2px #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+
+.info h1 {
+    letter-spacing: 0.1;
+    font-size: 45px;
+}
+
+.info h2,
+.info h3,
+.info p {
+    padding-top: 2rem;
+}
+
+.info p {
+    font-size: 22px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.buttons button {
+    width: 5.5rem;
+    height: 2rem;
+    color: white;
+    font-size: medium;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+}
+
+.buttons button:first-of-type {
+    background-color: #1C3879;
+}
+
+.buttons button:last-of-type {
+    background-color: #A10035;
+}

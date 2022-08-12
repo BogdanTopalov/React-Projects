@@ -1,0 +1,78 @@
+.add {
+    width: 70%;
+    height: 85%;
+    border: 1px solid green;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.add h2 {
+    font-size: 60px;
+    padding-bottom: 0.5rem;
+}
+
+.add input {
+    width: 70%;
+    height: 3rem;
+
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px white;
+
+    text-align: center;
+    font-size: large;
+
+    color: white;
+}
+
+.add input:focus {
+    outline: none;
+}
+
+.add input:focus::placeholder {
+    color: transparent;
+    text-shadow: none;
+}
+
+.add h2,
+.add input,
+.add label {
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.add label,
+.add select  {
+    font-size: 22px;
+}
+
+.add select {
+    border-radius: 15px;
+    width: 7rem;
+    text-align: center;
+}
+
+.buttons button {
+    width: 5.5rem;
+    height: 2rem;
+    color: white;
+    font-size: medium;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+    background-color: #3FA796;
+}

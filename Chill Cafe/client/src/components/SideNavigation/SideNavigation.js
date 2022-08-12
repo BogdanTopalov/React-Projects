@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faCircleInfo, faUtensils, faMartiniGlass, faAddressBook } from '@fortawesome/free-solid-svg-icons'
+import styles from './SideNavigation.module.css'
+
 
 const SideNavigation = () => {
     return (
-        <section className="sidebar">
+        <section className={styles.sidebar}>
             <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/about'>About</Link></li>
-                <li><Link to='/food'>Food</Link></li>
-                <li><Link to='/drinks'>Drinks</Link></li>
-                <li><Link to='/reservation'>Reservation</Link></li>
+                <li><Link to='/'><FontAwesomeIcon icon={faHome} /></Link></li>
+                <li><Link to='/about'><FontAwesomeIcon icon={faCircleInfo} /></Link></li>
+                <li><Link to='/food'><FontAwesomeIcon icon={faUtensils} /></Link></li>
+                <li><Link to='/drinks'><FontAwesomeIcon icon={faMartiniGlass} /></Link></li>
+                <li><Link to='/reservation'><FontAwesomeIcon icon={faAddressBook} /></Link></li>
             </ul>
         </section>
     )

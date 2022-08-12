@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { editFood, getOneFood } from "../../services/foodService"
+import styles from './EditFood.module.css'
 
 
 const EditFood = () => {
@@ -36,7 +37,7 @@ const EditFood = () => {
     }
 
     return (
-        <form className="edit" onSubmit={onSubmitHandler}>
+        <form className={styles.edit} onSubmit={onSubmitHandler}>
             <h2>Edit Drink</h2>
             <input 
                 type="text"
@@ -69,7 +70,7 @@ const EditFood = () => {
                 value={formValues.imageUrl}
                 onChange={onChangeHandler}
             />
-            <div className="buttons">
+            <div className={styles.buttons}>
                 <button>Submit</button>
                 <button onClick={onCancelHandler}>Cancel</button>
             </div>

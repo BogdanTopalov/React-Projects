@@ -2,14 +2,15 @@ import { useContext, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import { register } from "../../services/authService"
+import styles from './Register.module.css'
 
 
 const Register = () => {
-    const { userLogin } = useContext(AuthContext)
+    document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1468581264429-2548ef9eb732?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")'
 
+    const { userLogin } = useContext(AuthContext)
     const initialValues = { email: '', password: '', confirmPassword: ''}
     const [formValues, setFormValues] = useState(initialValues)
-
     const navigate = useNavigate()
 
     const onChangeHandler = (e) => {
@@ -31,14 +32,10 @@ const Register = () => {
                 userLogin(data)
                 navigate('/')
             })
-            .catch(() => {
-
-            })
     }
 
-
     return (
-        <form className="login-register" onSubmit={onSubmitHandler}>
+        <form className={styles.register} onSubmit={onSubmitHandler}>
             <h2>Register</h2>
             <input 
                 type="email" 

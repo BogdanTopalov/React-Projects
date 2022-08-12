@@ -1,0 +1,32 @@
+.filters {
+    position: absolute;
+
+    height: 80%;
+    width: 10%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.buttons button {
+    width: 6.5rem;
+    height: 2.5rem;
+    color: white;
+    font-size: medium;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+    background-color: #3B9AE1;
+}

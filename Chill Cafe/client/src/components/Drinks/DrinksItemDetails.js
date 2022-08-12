@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import { getOneDrink, removeDrink } from "../../services/drinksService"
+import styles from './DrinkItemDetails.module.css'
 
 
 const DrinksItemDetails = () => {
@@ -31,9 +32,9 @@ const DrinksItemDetails = () => {
     }
 
     return (
-        <div className="details">
+        <div className={styles.details}>
             <img src={currentDrink.imageUrl} alt='img' />
-            <div className="info">
+            <div className={styles.info}>
                 <div>
                     <h1>{currentDrink.name}</h1>
                     <h2>Price: &euro;{currentDrink.price}</h2>
@@ -42,7 +43,7 @@ const DrinksItemDetails = () => {
                 </div>
 
                 {user.email === 'admin@abv.bg'
-                    ? <div className="buttons">
+                    ? <div className={styles.buttons}>
                         <button onClick={onEditHandler}>Edit</button>
                         <button onClick={onDeleteHandler}>Delete</button>
                     </div>
