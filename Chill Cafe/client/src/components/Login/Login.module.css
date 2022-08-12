@@ -7,8 +7,6 @@
     flex-direction: column;
     align-items: center;
 
-    gap: 2rem;
-
     color: white;
     backdrop-filter: blur(10px);
     border-radius: 15px;
@@ -16,12 +14,12 @@
 
 .login h2 {
     font-size: 60px;
-    padding-bottom: 0.5rem;
 }
 
 .login input {
     width: 70%;
     height: 3rem;
+    margin-top: 3rem;
 
     background-color: transparent;
     border-top: none;
@@ -44,6 +42,7 @@
 }
 
 .login button {
+    margin: 1rem 0;
     width: 70%;
     height: 3rem;
     color: white;

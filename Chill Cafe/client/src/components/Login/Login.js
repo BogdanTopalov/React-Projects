@@ -10,45 +10,77 @@ const Login = () => {
 
     const initialValues = { email: '', password: '' }
     const [formValues, setFormValues] = useState(initialValues)
+    const [formErrors, setFormErrors] = useState({})
     const { userLogin } = useContext(AuthContext)
     const navigate = useNavigate()
+
+    const validate = (values) => {
+        const errors = {}
+        const emailRegex = /\S+@\S+\.\S+/
+
+        if (!values.email) {
+            errors.email = 'Please insert an email!'
+        } else if (!emailRegex.test(values.email)) {
+            errors.email = 'Wrong email format!'
+        }
+
+        if (!values.password) {
+            errors.password = 'Please insert a password!'
+        } else if (values.password.length < 5) {
+            errors.password = 'Password must be 5 or more characters!'
+        }
+
+        return errors
+    }
 
     const onChangeHandler = (e) => {
         const { name, value } = e.target
         setFormValues(
-            {...formValues, [name]: value}
+            { ...formValues, [name]: value }
         )
     }
 
     const onSubmitHandler = (e) => {
         e.preventDefault()
 
-        login(formValues.email, formValues.password)
-            .then(data => {
-                userLogin(data)
-                navigate('/')
-            })
+        const validateResult = validate(formValues)
+
+        if (Object.keys(validateResult).length === 0) {
+            login(formValues.email, formValues.password)
+                .then(data => {
+                    userLogin(data)
+                    navigate('/')
+                })
+        } else {
+            setFormErrors(validateResult)
+        }
     }
 
     return (
         <form className={styles.login} onSubmit={onSubmitHandler}>
             <h2>Login</h2>
-            <input 
-                type="email" 
-                name="email" 
-                placeholder="Email" 
-                value={ formValues.email } 
-                onChange={onChangeHandler} 
+            <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formValues.email}
+                onChange={onChangeHandler}
             />
-            {/* <p>{formErrors.email}</p> */}
-            <input 
-                type="password" 
-                name="password" 
-                placeholder="Password" 
-                value={ formValues.password } 
-                onChange={onChangeHandler} 
+            {formErrors.email
+                ? <p>{formErrors.email}</p>
+                : <></>
+            }
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={formValues.password}
+                onChange={onChangeHandler}
             />
-            {/* <p>{formErrors.password}</p> */}
+            {formErrors.password
+                ? <p>{formErrors.password}</p>
+                : <></>
+            }
             <button>Submit</button>
             <p>No profile? Click <Link to='/register'>here</Link></p>
         </form>
