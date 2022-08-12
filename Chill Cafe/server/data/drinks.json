@@ -1,4 +1,82 @@
 {
-    "1": {},
-    "2": {}
+    "cf625007-3637-45a4-a3b8-69ba731a8a68": {
+        "name": "Frappe",
+        "type": "Coffee",
+        "price": "5",
+        "info": "The best coffee choice in every beach bar.",
+        "imageUrl": "https://images.unsplash.com/photo-1471691118458-a88597b4c1f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "_id": "cf625007-3637-45a4-a3b8-69ba731a8a68"
+    },
+    "7c230680-223c-4851-ae96-f4ae59b6be7f": {
+        "name": "Mojito",
+        "type": "Cocktail",
+        "price": "7",
+        "info": "One of the most famous cocktails around the world.",
+        "imageUrl": "https://images.unsplash.com/photo-1575596510825-f748919a2bf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
+        "_id": "7c230680-223c-4851-ae96-f4ae59b6be7f"
+    },
+    "9fa38831-2b38-46a4-b308-3e7f926e6206": {
+        "name": "Cappuccino",
+        "type": "Coffee",
+        "price": "3",
+        "info": "Simple and tasteful combination of coffee and milk.",
+        "imageUrl": "https://images.unsplash.com/photo-1480348709911-be15f2c579ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+        "_id": "9fa38831-2b38-46a4-b308-3e7f926e6206"
+    },
+    "15f0152b-8605-47a5-826a-0fd5b3201965": {
+        "name": "Espresso",
+        "type": "Coffee",
+        "price": "3",
+        "info": "Elegant choice of coffee for a quick boost of energy.",
+        "imageUrl": "https://images.unsplash.com/photo-1576028907930-e7b29b8dfbd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+        "_id": "15f0152b-8605-47a5-826a-0fd5b3201965"
+    },
+    "fd709fc2-304b-4d63-aeee-ea66bb5e0528": {
+        "name": "Beer",
+        "type": "Cold Drink",
+        "price": "5",
+        "info": "One cold beer is always a great choice.",
+        "imageUrl": "https://images.unsplash.com/photo-1546388612-9e938bb6c057?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+        "_id": "fd709fc2-304b-4d63-aeee-ea66bb5e0528"
+    },
+    "54054e0d-6efd-4788-bf85-6774cbd5a907": {
+        "name": "Mai Tai",
+        "type": "Cocktail",
+        "price": "7",
+        "info": "Rum, Grand Marnier, and Lime mix.",
+        "imageUrl": "https://images.unsplash.com/photo-1648757997020-94e698e36e55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "_id": "54054e0d-6efd-4788-bf85-6774cbd5a907"
+    },
+    "5c42bc23-291d-4161-846e-bb90fdbd62a1": {
+        "name": "Whiskey Cocktail",
+        "type": "Cocktail",
+        "price": "8",
+        "info": "A lovely cocktail called the Johnnie Black Box Office, prepared with Johnnie Walker Black Label and Vermouth.",
+        "imageUrl": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "_id": "5c42bc23-291d-4161-846e-bb90fdbd62a1"
+    },
+    "4b19f1aa-e904-463d-b1dd-f30f2e168425": {
+        "name": "Pina Colada",
+        "type": "Cocktail",
+        "price": "7",
+        "info": "Rum, coconut milk, and pineapple juice blended into a frothy delight.",
+        "imageUrl": "https://images.unsplash.com/photo-1607644536940-6c300b5784c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "_id": "4b19f1aa-e904-463d-b1dd-f30f2e168425"
+    },
+    "0f3d24d7-50c0-4495-9df6-a5c2858c492a": {
+        "name": "Strawberry Paradise",
+        "type": "Cocktail",
+        "price": "6",
+        "info": "Strawberry, mint and lime combined with the famous gin & tonic.",
+        "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=472&q=80",
+        "_id": "0f3d24d7-50c0-4495-9df6-a5c2858c492a"
+    },
+    "27c6bcd5-438a-441e-afdd-1de11bf0d482": {
+        "name": "Chocolate Shake",
+        "type": "Cold Drink",
+        "price": "5",
+        "info": "Milk, cookies, dark chocolate. All blended together and topped with cream.",
+        "imageUrl": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "_id": "27c6bcd5-438a-441e-afdd-1de11bf0d482"
+    }
 }

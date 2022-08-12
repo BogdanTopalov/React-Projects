@@ -1,8 +1,74 @@
 {
-    "1": {
-        "type": "bruch"
+    "4b301b15-7460-47a3-8638-78a0cedd306d": {
+        "name": "Pizza",
+        "type": "Fast Food",
+        "price": "10",
+        "info" : "Ten slices pizza made with tomato paste, green pepper, mozzarella, basil and cheese.",
+        "imageUrl": "https://images.unsplash.com/photo-1600028068383-ea11a7a101f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "_id": "4b301b15-7460-47a3-8638-78a0cedd306d"
     },
-    "2": {
-        "type": "breakfast"
+    "dab37fba-27b2-4ee9-883c-56448db0435f": {
+        "name": "Club Sandwich",
+        "type": "Fast Food",
+        "price": "8",
+        "info" : "Four delicious sandwiches made with lettuce, tomato slices, ham and cheese. Fried potatoes garnish is included.",
+        "imageUrl": "https://images.unsplash.com/photo-1574782256243-69c18023f7b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+        "_id": "dab37fba-27b2-4ee9-883c-56448db0435f"
+    },
+    "22299e3e-d04a-4c2b-99da-7aae5e81fb33": {
+        "name": "Ice Cream",
+        "type": "Dessert",
+        "price": "7",
+        "info": "The best chocolate ice cream you can find. The cookies and cream addition makes it even better.",
+        "imageUrl": "https://images.unsplash.com/photo-1576506295286-5cda18df43e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        "_id": "22299e3e-d04a-4c2b-99da-7aae5e81fb33"
+    },
+    "12399e3e-f04a-4b2b-97da-7eee5e81fb22": {
+        "name": "Pancakes",
+        "type": "Dessert",
+        "price": "8",
+        "info" : "The perfect dessert.",
+        "imageUrl": "https://images.unsplash.com/photo-1594491084435-07c418f83735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "_id": "12399e3e-f04a-4b2b-97da-7eee5e81fb22"
+    },
+    "8bfd3014-169d-4ed7-962d-af1bf596daeb": {
+        "name": "Beef Burger",
+        "type": "Fast Food",
+        "price": "9",
+        "info": "Beef burger garnished with fried potatoes, salad and BBQ sauce.",
+        "imageUrl": "https://images.unsplash.com/photo-1550950158-d0d960dff51b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+        "_id": "8bfd3014-169d-4ed7-962d-af1bf596daeb"
+    },
+    "14a1ca97-622d-4183-ac53-312484079d4c": {
+        "name": "Spaghetti Carbonara",
+        "type": "Main",
+        "price": "11",
+        "info": "Spaghetti with slat, pepper, parmesan and ham cubes.",
+        "imageUrl": "https://images.unsplash.com/photo-1633337474564-1d9478ca4e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        "_id": "14a1ca97-622d-4183-ac53-312484079d4c"
+    },
+    "207b9497-f8d6-4e87-854b-ffc134bd020c": {
+        "name": "Ragu",
+        "type": "Main",
+        "price": "11",
+        "info": "Pasta with tomato sauce.",
+        "imageUrl": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+        "_id": "207b9497-f8d6-4e87-854b-ffc134bd020c"
+    },
+    "0f89d218-84e3-4b61-95aa-23f2a6dc6eb9": {
+        "name": "Tiramisu",
+        "type": "Dessert",
+        "price": "7",
+        "info": "Tiramisu in chocolate cups.",
+        "imageUrl": "https://images.unsplash.com/photo-1624001934657-640af7e2c599?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "_id": "0f89d218-84e3-4b61-95aa-23f2a6dc6eb9"
+    },
+    "3b066ede-8e56-42bc-9410-75f80311e97a": {
+        "name": "Hot Dog",
+        "type": "Fast Food",
+        "price": "5",
+        "info": "Traditional american hot dog.",
+        "imageUrl": "https://images.unsplash.com/photo-1619740455993-9e612b1af08a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "_id": "3b066ede-8e56-42bc-9410-75f80311e97a"
     }
 }
