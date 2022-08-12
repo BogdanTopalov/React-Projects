@@ -23,18 +23,20 @@ npm install --save @fortawesome/react-fontawesome
 
 # Home Page
 
-[![home.png](https://i.postimg.cc/pXLDhCNt/home.png)](https://postimg.cc/py393DX0)
+<img src="./examples/Home.png">
+
 
 # Login & Register Form Validations
 
-[![Login-Errors.gif](https://i.postimg.cc/fbCxKc2x/Login-Errors.gif)](https://postimg.cc/WDDFpkP3)
+<img src="./examples/LoginErrors.gif">
 
-[![Register-Errors.gif](https://i.postimg.cc/wjhZQjCh/Register-Errors.gif)](https://postimg.cc/DSwx2nyZ)
+<img src="./examples/RegisterErrors.gif">
+
 
 # Reservation Functionality
 
-[![Reservation.gif](https://i.postimg.cc/028F8sFn/Reservation.gif)](https://postimg.cc/jCFZXGsn)
+<img src="./examples/Reservation.gif">
 
 # Food & Drinks Functionality
 
-[![Food-Drinks.gif](https://i.postimg.cc/WpYTZDhW/Food-Drinks.gif)](https://postimg.cc/rz4BXwGx)
+<img src="./examples/FoodAndDrinks.gif">
