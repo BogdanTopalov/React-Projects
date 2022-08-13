@@ -10,7 +10,7 @@ import styles from './Food.module.css'
 
 
 const Food = () => {
-    document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1556008531-57e6eefc7be4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1457&q=80")'
+    document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1628006203055-b4aa5f6300f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")'
 
     const [food, setFood] = useState([])
     const { selectedFood } = useContext(MainContext)
