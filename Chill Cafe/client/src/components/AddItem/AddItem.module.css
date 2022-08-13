@@ -1,14 +1,13 @@
 .add {
     width: 70%;
     height: 85%;
-    border: 1px solid green;
     text-align: center;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    gap: 2rem;
+    gap: 1.5rem;
 
     color: white;
     backdrop-filter: blur(10px);

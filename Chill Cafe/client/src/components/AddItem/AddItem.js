@@ -13,6 +13,7 @@ const AddItem = () => {
         price: '',
         type: '',
         imageUrl: '',
+        info: '',
         category: '',
     })
     const navigate = useNavigate()
@@ -71,19 +72,26 @@ const AddItem = () => {
                 value={formValues.imageUrl}
                 onChange={onChangeHandler}
             />
+            <input
+                type="text"
+                name="info"
+                placeholder="Info"
+                value={formValues.info}
+                onChange={onChangeHandler}
+            />
             <label>
                 Select category:
             </label>
-            
-            <select 
-                name="category" 
+
+            <select
+                name="category"
                 onChange={onChangeHandler}
             >
                 <option>---</option>
                 <option value="/food">Food</option>
                 <option value="/drinks">Drinks</option>
             </select>
-            
+
             <div className={styles.buttons}>
                 <button>Submit</button>
             </div>
